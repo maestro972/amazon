@@ -1,0 +1,48 @@
+
+https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/
+https://blog.keras.io/category/tutorials.html
+https://chrisalbon.com/jupyter/run_project_jupyter_on_amazon_ec2.html
+
+
+ssh -i 'C:\Workspace\aws\ssh\maestroKey.pem' ec2-user@54.191.126.4
+ wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+export PATH="/home/ec2-user/anaconda3/bin:$PATH"
+
+jupyter notebook --generate-config
+Writing default config to: /root/.jupyter/jupyter_notebook_config.py
+
+'sha1:3f18b0919526:db4233de619714077df3f999c0375b52af004b89'
+
+'sha1:fefb7e55f6aa:c85c92d3d6b1f9f80a8dbabc4281be0a6d1d0b39'
+
+https://ec2-52-32-57-196.us-west-2.compute.amazonaws.com:8888/
+
+https://35.164.49.80:8888/
+
+
+lspci | grep -i nvidia
+uname -m && cat /etc/*release
+gcc --version
+sudo yum install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
+yum upgrade
+sudo yum groupinstall "Development Tools" (needed for gcc install)
+
+
+http://www.heatonresearch.com/2017/01/01/tensorflow-windows-gpu.html
+http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions
+
+'sha1:3679bf245e2b:81de3a04f70e75d71f98515c90e80ba262051855'
+
+
+unable to upload file
+For Ubuntu (http://stackoverflow.com/questions/19648712/amazon-aws-filezilla-transfer-permission-denied)
+
+sudo chown -R ubuntu:ubuntu /var/www/html
+
+sudo chmod -R 755 /var/www/html
+
+
+$ tar -zxvf cudnn-7.0-linux-x64-v4.0-prod.solitairetheme8
+$ cd cuda
+$ sudo cp include/cudnn.h /usr/local/include
+$ sudo cp lib64/libcudnn.* /usr/local/lib

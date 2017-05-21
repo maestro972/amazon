@@ -1,0 +1,43 @@
+import numpy as np
+import pandas as pd
+
+!pwd
+
+!python --version
+
+!ls -la
+
+!ls -la ./data/train-jpg/*.jpg | wc -l
+
+df_labels = pd.read_csv('./data/train-csv/train.csv')
+df_labels.head(10)
+
+labels = df_labels.tags.values
+labels
+
+labels_list = []
+for lbl in labels:
+    labels_list.extend(lbl.split(' '))
+labels_set = set(labels_list)
+labels_set
+
+for i, label in enumerate(labels_set):
+    print('label:%s  %d/%d' %(label, i+1, len(labels_set)))
+    %time df_labels[label] = df_labels.tags.apply(lambda x : 1 if label in x.split(' ') else 0)
+
+df_labels
+
+df_train = df_labels.tags.str.get_dummies(' ')
+df_train.insert(0, 'image_name', df_labels.image_name)
+df_train.head(10)
+
+%matplotlib inline
+
+df_train[list(labels_set)].sum().sort_values()
+
+df_train[list(labels_set)].sum().sort_values().plot(kind='bar')
+
+df_train[list(labels_set)].corr()
+
+import seaborn as sns
+import matplotlib.cm as cm
