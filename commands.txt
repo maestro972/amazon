@@ -46,3 +46,6 @@ $ tar -zxvf cudnn-7.0-linux-x64-v4.0-prod.solitairetheme8
 $ cd cuda
 $ sudo cp include/cudnn.h /usr/local/include
 $ sudo cp lib64/libcudnn.* /usr/local/lib
+
+https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32641
+http://adilmoujahid.com/posts/2016/06/introduction-deep-learning-python-caffe/
